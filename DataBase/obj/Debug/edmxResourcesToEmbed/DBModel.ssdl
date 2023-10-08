@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CareerCareDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="IdApp" />
+    </Key>
+    <Property Name="IdApp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="150" />
+    <Property Name="CmpName" Type="varchar" MaxLength="100" />
+    <Property Name="JsName" Type="varchar" MaxLength="150" />
+    <Property Name="CV" Type="varchar" MaxLength="150" />
+    <Property Name="JobId" Type="int" />
+    <Property Name="JsId" Type="int" />
+    <Property Name="CompanyLogo" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogTitle" Type="varchar" MaxLength="500" />
+    <Property Name="BlogDes" Type="varchar" MaxLength="2000" />
+    <Property Name="BlogTag" Type="varchar" MaxLength="50" />
+    <Property Name="BlogImgPath" Type="varchar" MaxLength="50" />
+    <Property Name="BlogCatag" Type="varchar" MaxLength="50" />
+    <Property Name="CmpId" Type="int" />
+  </EntityType>
+  <EntityType Name="BlogComments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="React" Type="int" />
+    <Property Name="CommenterName" Type="varchar" MaxLength="200" />
+    <Property Name="CommenterPic" Type="varchar" MaxLength="100" />
+    <Property Name="Comment" Type="varchar" MaxLength="1000" />
+    <Property Name="BlogId" Type="int" />
+  </EntityType>
+  <EntityType Name="CompanyProfile">
+    <Key>
+      <PropertyRef Name="CmpId" />
+    </Key>
+    <Property Name="CmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CmpName" Type="varchar" MaxLength="50" />
+    <Property Name="CmpHeadQ" Type="varchar" MaxLength="50" />
+    <Property Name="CmpFounded" Type="varchar" MaxLength="50" />
+    <Property Name="CmpFounders" Type="varchar" MaxLength="50" />
+    <Property Name="CmpCeo" Type="varchar" MaxLength="50" />
+    <Property Name="CmpEmail" Type="varchar" MaxLength="50" />
+    <Property Name="CmpContact" Type="varchar" MaxLength="50" />
+    <Property Name="CmpWebsite" Type="varchar" MaxLength="50" />
+    <Property Name="CmpDescription" Type="varchar" MaxLength="100" />
+    <Property Name="CmpLogo" Type="varchar" MaxLength="50" />
+    <Property Name="CmpPassword" Type="varchar" MaxLength="50" />
+    <Property Name="CmpNewPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="JobPost">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+    <Property Name="JobDes" Type="varchar" MaxLength="100" />
+    <Property Name="JobRequiredSkill" Type="varchar" MaxLength="100" />
+    <Property Name="JobExperience" Type="varchar" MaxLength="100" />
+    <Property Name="JobPostedDate" Type="varchar" MaxLength="50" />
+    <Property Name="JobLocation" Type="varchar" MaxLength="50" />
+    <Property Name="JobVacancy" Type="varchar" MaxLength="50" />
+    <Property Name="JobDeadLine" Type="varchar" MaxLength="50" />
+    <Property Name="JobSalary" Type="varchar" MaxLength="50" />
+    <Property Name="JobNature" Type="varchar" MaxLength="50" />
+    <Property Name="JobTag" Type="varchar" MaxLength="50" />
+    <Property Name="CmpId" Type="int" />
+  </EntityType>
+  <EntityType Name="JobSeekerProfile">
+    <Key>
+      <PropertyRef Name="JsId" />
+    </Key>
+    <Property Name="JsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="JsName" Type="varchar" MaxLength="50" />
+    <Property Name="JsEmail" Type="varchar" MaxLength="50" />
+    <Property Name="JsDateOfBirth" Type="varchar" MaxLength="50" />
+    <Property Name="JsPhone" Type="int" />
+    <Property Name="JsGender" Type="varchar" MaxLength="50" />
+    <Property Name="JsAddress" Type="varchar" MaxLength="50" />
+    <Property Name="JsPassword" Type="varchar" MaxLength="50" />
+    <Property Name="JsCurrentPosition" Type="varchar" MaxLength="50" />
+    <Property Name="JsSkills" Type="varchar" MaxLength="50" />
+    <Property Name="JsImagePath" Type="varchar" MaxLength="50" />
+    <Property Name="JsNewPassword" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="RegId" />
+    </Key>
+    <Property Name="RegId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="100" />
+    <Property Name="Email" Type="varchar" MaxLength="100" />
+    <Property Name="Passwd" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="BlogCommentsFK">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="0..1" />
+    <End Role="BlogComments" Type="Self.BlogComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="BlogId" />
+      </Principal>
+      <Dependent Role="BlogComments">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BlogFK">
+    <End Role="CompanyProfile" Type="Self.CompanyProfile" Multiplicity="0..1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyProfile">
+        <PropertyRef Name="CmpId" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="CmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobPostFK">
+    <End Role="CompanyProfile" Type="Self.CompanyProfile" Multiplicity="0..1" />
+    <End Role="JobPost" Type="Self.JobPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyProfile">
+        <PropertyRef Name="CmpId" />
+      </Principal>
+      <Dependent Role="JobPost">
+        <PropertyRef Name="CmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobPostTable">
+    <End Role="JobPost" Type="Self.JobPost" Multiplicity="0..1" />
+    <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobPost">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JobSeekerTable">
+    <End Role="JobSeekerProfile" Type="Self.JobSeekerProfile" Multiplicity="0..1" />
+    <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="JobSeekerProfile">
+        <PropertyRef Name="JsId" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="JsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CareerCareDBModelStoreContainer">
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BlogComments" EntityType="Self.BlogComments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyProfile" EntityType="Self.CompanyProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobPost" EntityType="Self.JobPost" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="JobSeekerProfile" EntityType="Self.JobSeekerProfile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="BlogCommentsFK" Association="Self.BlogCommentsFK">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="BlogComments" EntitySet="BlogComments" />
+    </AssociationSet>
+    <AssociationSet Name="BlogFK" Association="Self.BlogFK">
+      <End Role="CompanyProfile" EntitySet="CompanyProfile" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="JobPostFK" Association="Self.JobPostFK">
+      <End Role="CompanyProfile" EntitySet="CompanyProfile" />
+      <End Role="JobPost" EntitySet="JobPost" />
+    </AssociationSet>
+    <AssociationSet Name="JobPostTable" Association="Self.JobPostTable">
+      <End Role="JobPost" EntitySet="JobPost" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="JobSeekerTable" Association="Self.JobSeekerTable">
+      <End Role="JobSeekerProfile" EntitySet="JobSeekerProfile" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CareerCareDBModelStoreContainer" CdmEntityContainer="CareerCareDBEntities">
+    <EntitySetMapping Name="Registration">
+      <EntityTypeMapping TypeName="CareerCareDBModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="CareerCareDBModel.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="CmpId" ColumnName="CmpId" />
+          <ScalarProperty Name="BlogCatag" ColumnName="BlogCatag" />
+          <ScalarProperty Name="BlogImgPath" ColumnName="BlogImgPath" />
+          <ScalarProperty Name="BlogTag" ColumnName="BlogTag" />
+          <ScalarProperty Name="BlogDes" ColumnName="BlogDes" />
+          <ScalarProperty Name="BlogTitle" ColumnName="BlogTitle" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyProfile">
+      <EntityTypeMapping TypeName="CareerCareDBModel.CompanyProfile">
+        <MappingFragment StoreEntitySet="CompanyProfile">
+          <ScalarProperty Name="CmpNewPassword" ColumnName="CmpNewPassword" />
+          <ScalarProperty Name="CmpPassword" ColumnName="CmpPassword" />
+          <ScalarProperty Name="CmpLogo" ColumnName="CmpLogo" />
+          <ScalarProperty Name="CmpDescription" ColumnName="CmpDescription" />
+          <ScalarProperty Name="CmpWebsite" ColumnName="CmpWebsite" />
+          <ScalarProperty Name="CmpContact" ColumnName="CmpContact" />
+          <ScalarProperty Name="CmpEmail" ColumnName="CmpEmail" />
+          <ScalarProperty Name="CmpCeo" ColumnName="CmpCeo" />
+          <ScalarProperty Name="CmpFounders" ColumnName="CmpFounders" />
+          <ScalarProperty Name="CmpFounded" ColumnName="CmpFounded" />
+          <ScalarProperty Name="CmpHeadQ" ColumnName="CmpHeadQ" />
+          <ScalarProperty Name="CmpName" ColumnName="CmpName" />
+          <ScalarProperty Name="CmpId" ColumnName="CmpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobPost">
+      <EntityTypeMapping TypeName="CareerCareDBModel.JobPost">
+        <MappingFragment StoreEntitySet="JobPost">
+          <ScalarProperty Name="CmpId" ColumnName="CmpId" />
+          <ScalarProperty Name="JobTag" ColumnName="JobTag" />
+          <ScalarProperty Name="JobNature" ColumnName="JobNature" />
+          <ScalarProperty Name="JobSalary" ColumnName="JobSalary" />
+          <ScalarProperty Name="JobDeadLine" ColumnName="JobDeadLine" />
+          <ScalarProperty Name="JobVacancy" ColumnName="JobVacancy" />
+          <ScalarProperty Name="JobLocation" ColumnName="JobLocation" />
+          <ScalarProperty Name="JobPostedDate" ColumnName="JobPostedDate" />
+          <ScalarProperty Name="JobExperience" ColumnName="JobExperience" />
+          <ScalarProperty Name="JobRequiredSkill" ColumnName="JobRequiredSkill" />
+          <ScalarProperty Name="JobDes" ColumnName="JobDes" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JobSeekerProfile">
+      <EntityTypeMapping TypeName="CareerCareDBModel.JobSeekerProfile">
+        <MappingFragment StoreEntitySet="JobSeekerProfile">
+          <ScalarProperty Name="JsNewPassword" ColumnName="JsNewPassword" />
+          <ScalarProperty Name="JsImagePath" ColumnName="JsImagePath" />
+          <ScalarProperty Name="JsSkills" ColumnName="JsSkills" />
+          <ScalarProperty Name="JsCurrentPosition" ColumnName="JsCurrentPosition" />
+          <ScalarProperty Name="JsPassword" ColumnName="JsPassword" />
+          <ScalarProperty Name="JsAddress" ColumnName="JsAddress" />
+          <ScalarProperty Name="JsGender" ColumnName="JsGender" />
+          <ScalarProperty Name="JsPhone" ColumnName="JsPhone" />
+          <ScalarProperty Name="JsDateOfBirth" ColumnName="JsDateOfBirth" />
+          <ScalarProperty Name="JsEmail" ColumnName="JsEmail" />
+          <ScalarProperty Name="JsName" ColumnName="JsName" />
+          <ScalarProperty Name="JsId" ColumnName="JsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="CareerCareDBModel.Applications">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="JsId" ColumnName="JsId" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="CV" ColumnName="CV" />
+          <ScalarProperty Name="JsName" ColumnName="JsName" />
+          <ScalarProperty Name="CmpName" ColumnName="CmpName" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="IdApp" ColumnName="IdApp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BlogComments">
+      <EntityTypeMapping TypeName="CareerCareDBModel.BlogComments">
+        <MappingFragment StoreEntitySet="BlogComments">
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="CommenterPic" ColumnName="CommenterPic" />
+          <ScalarProperty Name="CommenterName" ColumnName="CommenterName" />
+          <ScalarProperty Name="React" ColumnName="React" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

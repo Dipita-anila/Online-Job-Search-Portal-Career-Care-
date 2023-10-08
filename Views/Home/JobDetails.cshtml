@@ -1,0 +1,139 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using DataBase
+@model dynamic
+@*@model IEnumerable<DataBase.Class1>*@
+
+<main>
+
+    <!-- Hero Area Start-->
+    @foreach (var jobs in Model.filter1)
+    {
+        
+        <div class="slider-area ">
+            <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="~/Content/assets/img/hero/about.jpg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+
+                            <div class="hero-cap text-center">
+                                <h2>@jobs.JobTitle</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero Area End -->
+
+        @*@foreach (var jobs in Model.filter1)
+            {*@
+
+        <!-- job post company Start -->
+        <div class="job-post-company pt-120 pb-120">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <!-- Left Content -->
+                    <div class="col-xl-7 col-lg-8">
+                        <!-- job single -->
+                        <div class="single-job-items mb-50">
+                            <div class="job-items">
+                                <div class="company-img company-img-details">
+                                    <a href="#"><img src="@Url.Content(jobs.CompanyProfile.CmpLogo)" height="85px" width="85px" alt=""></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a href="#">
+                                        <h4>@jobs.JobTitle</h4>
+                                    </a>
+                                    <ul>
+                                        <li>@jobs.CompanyProfile.CmpName</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>@jobs.CompanyProfile.CmpHeadQ</li>
+                                        <li>@jobs.JobSalary</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- job single End -->
+
+                        <div class="job-post-details">
+                            <div class="post-details1 mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Job Description</h4>
+                                </div>
+                                <p>@jobs.JobDes</p>
+                                @*<p>It is a long established fact that a reader will beff distracted by vbthe creadable content of a page when looking at its layout. The pointf of using Lorem Ipsum is that it has ahf mcore or-lgess normal distribution of letters, as opposed to using, Content here content here making it look like readable.</p>*@
+                            </div>
+                            <div class="post-details2  mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Required Knowledge, Skills, and Abilities</h4>
+                                </div>
+                                <ul>
+                                    <li>System Software Development</li>
+                                    <li>Mobile Applicationin iOS/Android/Tizen or other platform</li>
+                                    <li>Research and code , libraries, APIs and frameworks</li>
+                                    <li>Strong knowledge on software development life cycle</li>
+                                    <li>Strong problem solving and debugging skills</li>
+                                    <li>@jobs.JobRequiredSkill</li>
+                                </ul>
+                            </div>
+                            <div class="post-details2  mb-50">
+                                <!-- Small Section Tittle -->
+                                <div class="small-section-tittle">
+                                    <h4>Education + Experience</h4>
+                                </div>
+                                <ul>
+                                    <li>3 or more years of professional design experience</li>
+                                    <li>Direct response email experience</li>
+                                    <li>Ecommerce website design experience</li>
+                                    <li>Familiarity with mobile and web apps preferred</li>
+                                    <li>Experience using Invision a plus</li>
+                                    <li>@jobs.JobExperience Years</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Right Content -->
+                    <div class="col-xl-4 col-lg-4">
+                        <div class="post-details3  mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Job Overview</h4>
+                            </div>
+                            <ul>
+                                <li>Posted date : <span>@jobs.JobPostedDate</span></li>
+                                <li>Location : <span>@jobs.JobLocation</span></li>
+                                <li>Vacancy : <span>@jobs.JobVacancy</span></li>
+                                <li>Job nature : <span>@jobs.JobNature</span></li>
+                                <li>Salary :  <span>@jobs.JobSalary</span></li>
+                                <li>Application date : <span>@jobs.JobDeadLine</span></li>
+                            </ul>
+                            <div class="apply-btn2">
+                                <a href="/Login/SignIn" class="btn">Apply Now</a>
+                            </div>
+                        </div>
+                        <div class="post-details4  mb-50">
+                            <!-- Small Section Tittle -->
+                            <div class="small-section-tittle">
+                                <h4>Company Information</h4>
+                            </div>
+                            <span>@jobs.CompanyProfile.CmpName</span>
+                            <p>@jobs.CompanyProfile.CmpDescription</p>
+                            @*<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>*@
+                            <ul>
+                                <li>Name: <span>@jobs.CompanyProfile.CmpName </span></li>
+                                <li>Web : <span>@jobs.CompanyProfile.CmpWebsite</span></li>
+                                <li>Email: <span>@jobs.CompanyProfile.CmpEmail</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- job post company End -->
+    }
+
+</main>

@@ -1,0 +1,507 @@
+﻿@model DataBase.CompanyProfile
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Career Care </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+
+
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="~/Content/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/flaticon.css">
+    <link rel="stylesheet" href="~/Content/assets/css/price_rangs.css">
+    <link rel="stylesheet" href="~/Content/assets/css/slicknav.css">
+    <link rel="stylesheet" href="~/Content/assets/css/animate.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/Content/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/Content/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/assets/css/slick.css">
+    <link rel="stylesheet" href="~/Content/assets/css/nice-select.css">
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/icondropdown.css">  @*this is for the profile icon dropdown*@
+
+
+
+
+</head>
+
+<body>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="~/Content/assets/img/logo/logo.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparrent">
+            <div class="headder-top header-sticky">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-2">
+                            <!-- Logo -->
+                            <div class="logo">
+                                <a href="index.html"><img src="~/Content/assets/img/logo/logo.png" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="menu-wrapper">
+                                <!-- Main-menu -->
+                                <div class="main-menu">
+                                    <nav class="d-none d-lg-block">
+                                        <ul id="navigation">
+                                            <li><a href="/CompanyHome/CmpIndex">Home</a></li>
+
+                                            <li><a href="/CompanyHome/CmpAbout">About</a></li>
+                                            <li>
+                                                <a href="#">Page</a>
+                                                <ul class="submenu">
+                                                    <li><a href="/CompanyHome/CmpBlogList">Blog</a></li>
+                                                 
+                                                    @*<li><a href="#">Elements</a></li>
+                                                        <li><a href="#">job Details</a></li>*@
+                                                </ul>
+                                            </li>
+                                            <li><a href="/CompanyHome/CmpContact">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <!-- Header-btn -->
+                                <div class="header-btn d-none f-right d-lg-block">
+                                    <div class="">
+                                        <div style="padding-right: -15px;">
+
+                                            <div class="dropdown">
+                                                @if (Model.CmpLogo == null)
+                                                {
+                                                    <button onclick="myFunction()" class="dropbtn"> <img src="~/content/assets/img/icon/job-list1.png" height="60px" width="60px" alt=""></button>
+                                                    <div id="myDropdown" class="dropdown-content">
+                                                        <a href="/CompanyHome/CmpJobPost">Post a Job</a>
+                                                        <a href="/CompanyHome/CmpPostedJobTable">Applications</a>
+                                                        <a href="/CompanyHome/CmpBlogPost">Blogs/News</a>
+                                                        <a href="/CompanyHome/CmpUpdateInfo">Update Profile</a>
+                                                        <a href="/CompanyHome/CmpShowInfo">Company Details</a>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <button onclick="myFunction()" class="dropbtn"> <img src="@Url.Content(Model.CmpLogo)" height="60px" width="60px" alt=""></button>
+                                                    <div id="myDropdown" class="dropdown-content">
+                                                        <a href="/CompanyHome/CmpJobPost">Post a Job</a>
+                                                        <a href="/CompanyHome/CmpPostedJobTable">Applications</a>
+                                                        <a href="/CompanyHome/CmpBlogPost">Blogs/News</a>
+                                                        <a href="/CompanyHome/CmpUpdateInfo">Update Profile</a>
+                                                        <a href="/CompanyHome/CmpShowInfo">Company Details</a>
+                                                    </div>
+                                                }
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <a href="/Home/Index" class="btn head-btn2">Logout</a>
+                            </div>
+                        </div>
+                        <!-- Mobile Menu -->
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="~/Content/fonts/icomoon/style.css">
+
+        <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+
+        <!-- Style -->
+        <link rel="stylesheet" href="~/Content/css/style.css">
+
+        <title>Update Information</title>
+    </head>
+    <body>
+
+
+        <div class="d-lg-flex half">
+            <div class="bg order-1 order-md-2" data-background="@Url.Content("~/Content/images/bg_1.jpg")"></div>
+            <div class="contents order-2 order-md-1">
+
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col-md-7 py-5">
+                            <h3>Update Information</h3>
+                            <p class="mb-4">You can change your company Information here</p>
+
+
+                            @using (Html.BeginForm("CmpUpdateInfo", "CompanyHome", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+
+
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group first">
+                                            <label for="fname">Company Name</label>
+                                            <input type="text" class="form-control" placeholder="e.g. microsoft" id="CmpName" name="CmpName">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group first">
+                                            <label for="lname">Headquarters</label>
+                                            <input type="text" class="form-control" placeholder="e.g Washington, United States" id="CmpHeadQ" name="CmpHeadQ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group first">
+                                            <label for="fname">Founded</label>
+                                            <input type="text" class="form-control" placeholder="e.g.  April 4, 1975" id="CmpFounded" name="CmpFounded">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group first">
+                                            <label for="lname">Founders</label>
+                                            <input type="text" class="form-control" placeholder="e.g Bill Gates, Paul Allen" id="CmpFounders" name="CmpFounders">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group first">
+                                            <label for="lname">CEO</label>
+                                            <input type="text" class="form-control" placeholder="e.g Satya Nadella" id="CmpCeo" name="CmpCeo">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group first">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" class="form-control" placeholder="e.g. john@your-domain.com" id="CmpEmail" name="CmpEmail">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group first">
+                                            <label for="lname">Contact</label>
+                                            <input type="text" class="form-control" placeholder="+00 0000 000 0000" id="CmpContact" name="CmpContact">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group first">
+                                            <label for="lname">Website</label>
+                                            <input type="text" class="form-control" placeholder="e.g. https://google.com" id="CmpWebsite" name="CmpWebsite">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+
+                                        <div class="form-group last mb-3">
+                                            <label for="password">Description</label>
+                                            <input type="text" class="form-control" placeholder="Description" id="CmpDescription" name="CmpDescription">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+                                        <div class="form-group last mb-6">
+                                            <label for="password">Old Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="CmpPassword" name="CmpPassword">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="form-group last mb-6">
+                                            <label for="password">New Password</label>
+                                            <input type="password" class="form-control" placeholder="Your Password" id="CmpNewPassword" name="CmpNewPassword">
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="d-flex mb-5 mt-4 align-items-center">
+                                    <div class="form-group last mb-3">
+                                        <label for="CmpLogo">Company Logo</label>&nbsp; &nbsp;
+                                        <input type="file" id="cover" name="cover" />
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6">
+
+
+                                    </div>
+
+                                </div>
+
+                                <input type="submit" value="submit" class="btn px-5 btn-primary">
+
+                            }
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <br /><br />
+
+
+
+        <script src="~/Content/js/jquery-3.3.1.min.js"></script>
+        <script src="~/Content/js/popper.min.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/main.js"></script>
+    </body>
+</html>
+
+
+
+<footer>
+    <!-- Footer Start-->
+    <div class="footer-area footer-bg footer-padding">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="single-footer-caption mb-30">
+                            <div class="footer-tittle">
+                                <h4>About Us</h4>
+                                <div class="footer-pera">
+                                    <p>In this site you can find different types of job . We are giving a platform to choose your dream job.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Contact Info</h4>
+                            <ul>
+                                <li>
+                                    <p>
+                                        Address :Your address goes
+                                        Dhaka , Bangladesh
+                                    </p>
+                                </li>
+                                <li><a href="#">Phone : +8880 44338899</a></li>
+                                <li><a href="#">Email : info@careercare.com</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Important Link</h4>
+                            <ul>
+                                <li><a href="#"> View Project</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Testimonial</a></li>
+                                <li><a href="#">Proparties</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Newsletter</h4>
+                            <div class="footer-pera footer-pera2">
+                                <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+                            </div>
+                            <!-- Form -->
+                            <div class="footer-form">
+                                <div id="mc_embed_signup">
+                                    <form target="_blank" action="#"
+                                          method="get" class="subscribe_form relative mail_part">
+                                        <input type="email" name="email" id="newsletter-form-email" placeholder="Any Suggestions"
+                                               class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                               onblur="this.placeholder = 'Any Suggestions '">
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit"
+                                                    class="email_icon newsletter-submit button-contactForm">
+                                                <img src="~/Content/assets/img/icon/form.png" alt="">
+                                            </button>
+                                        </div>
+                                        <div class="mt-10 info"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <div class="row footer-wejed justify-content-between">
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                    <!-- logo -->
+                    <div class="footer-logo mb-20">
+                        <a href="index.html"><img src="~/Content/assets/img/logo/footer.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="footer-tittle-bottom">
+                        <span>5000+</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <div class="footer-tittle-bottom">
+                        <span>451</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
+                    <!-- Footer Bottom Tittle -->
+                    <div class="footer-tittle-bottom">
+                        <span>568</span>
+                        <p>Talented Hunter</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer-bottom area -->
+    <div class="footer-bottom-area footer-bg">
+        <div class="container">
+            <div class="footer-border">
+                <div class="row d-flex justify-content-between align-items-center">
+                    <div class="col-xl-10 col-lg-10 ">
+                        <div class="footer-copy-right">
+                            <p>
+                                <!-- S licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                <!--   licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="footer-social f-right">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-globe"></i></a>
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End-->
+</footer>
+
+<!-- JS here -->
+<!-- This javascrip is for the ProfileIcon Dropdown -->
+<script>
+    /* When the user clicks on the button,
+                            toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }</script>
+
+
+
+<!-- All JS Custom Plugins Link Here here -->
+<script src="~/Content/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="~/Content/assets/js/vendor/jquery-1.12.4.min.js"></script>
+<script src="~/Content/assets/js/popper.min.js"></script>
+<script src="~/Content/assets/js/bootstrap.min.js"></script>
+<!-- Jquery Mobile Menu -->
+<script src="~/Content/assets/js/jquery.slicknav.min.js"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="~/Content/assets/js/owl.carousel.min.js"></script>
+<script src="~/Content/assets/js/slick.min.js"></script>
+<script src="~/Content/assets/js/price_rangs.js"></script>
+
+<!-- One Page, Animated-HeadLin -->
+<script src="~/Content/assets/js/wow.min.js"></script>
+<script src="~/Content/assets/js/animated.headline.js"></script>
+<script src="~/Content/assets/js/jquery.magnific-popup.js"></script>
+
+<!-- Scrollup, nice-select, sticky -->
+<script src="~/Content/assets/js/jquery.scrollUp.min.js"></script>
+<script src="~/Content/assets/js/jquery.nice-select.min.js"></script>
+<script src="~/Content/assets/js/jquery.sticky.js"></script>
+
+<!-- contact js -->
+<script src="~/Content/assets/js/contact.js"></script>
+<script src="~/Content/assets/js/jquery.form.js"></script>
+<script src="~/Content/assets/js/jquery.validate.min.js"></script>
+<script src="~/Content/assets/js/mail-script.js"></script>
+<script src="~/Content/assets/js/jquery.ajaxchimp.min.js"></script>
+
+<!-- Jquery Plugins, main Jquery -->
+<script src="~/Content/assets/js/plugins.js"></script>
+<script src="~/Content/assets/js/main.js"></script>
+
+</body>
+</html>

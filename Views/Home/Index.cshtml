@@ -1,0 +1,462 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using DataBase
+@model dynamic
+@*@model IEnumerable<DataBase.Class1>*@
+
+<main>
+
+    <!-- slider Area Start-->
+    <div class="slider-area ">
+        <!-- Mobile Menu -->
+        <div class="slider-active">
+            <div class="single-slider slider-height d-flex align-items-center" data-background="@Url.Content("~/Content/assets/img/hero/h1_hero.jpg")">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-9 col-md-10">
+                            <div class="hero__caption">
+                                <h1>Find the most exciting startup jobs</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Search Box -->
+                    <div class="row">
+                        <div class="col-xl-8">
+                            <!-- form -->
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "search-box" }))
+                            {
+                                <div class="input-form">
+                                    <input type="text" placeholder="Job Tittle or keyword">
+                                </div>
+                                <div class="select-form">
+                                    <div class="select-itms">
+                                        <select name="location" id="select1">
+                                            <option value="dhaka">Location Dhaka</option>
+                                            <option value="rajshai">Location Rajshahi</option>
+                                            <option value="khulna">Location Khulna</option>
+                                            <option value="sylhet">Location Sylhet</option>
+                                            <option value="barisal">Location Barisal</option>
+                                            <option value="mymensingh">Location Mymensingh</option>
+                                            <option value="rangpur">Location Rangpur</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="search-form">
+                                    <a href=""><input type="submit" style="color: white; background-color:#fb246a; border:none" value="Find a Job" /> </a>
+                                </div>
+
+                            }
+                        </div></br></br></br> </br></br></br> </br></br></br></br></br> </br></br></br></br></br>
+                        <!-- This is where i put the search result-->
+                        @if (Model.filter2 == null)
+                        {
+                        }
+                        else
+                        {
+                            foreach (var data in Model.filter2)
+                            {
+                                <div class="single-job-items mb-30">
+                                    <div class="job-items">
+                                        <div class="company-img">
+                                            <a href="job_details.html"><img src="@Url.Content(data.CompanyProfile.CmpLogo)" height="85px" width="85px" alt=""></a>
+                                        </div>
+                                        <div class="job-tittle">
+                                            <a href="job_details.html"><h4>@data.CompanyProfile.CmpName</h4></a>
+                                            <ul>
+                                                <li>@data.CompanyProfile.CmpDescription</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>@data.CompanyProfile.CmpHeadQ , Bangladesh</li>
+                                                <li>@data.JobSalary</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            }
+
+
+
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- slider Area End-->
+        <!-- Our Services Start -->
+        <div class="our-services section-pad-t30">
+            <div class="container">
+                <!-- Section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>FEATURED TOURS Packages</span>
+                            <h2>Browse Top Categories </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-contnet-center">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-tour"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Design & Creative</a></h5>
+                                <span>@ViewBag.Ndesigncreative</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-cms"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Design & Development</a></h5>
+                                <span>@ViewBag.Ndesigndevelopment</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-report"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Sales & Marketing</a></h5>
+                                <span>@ViewBag.Nsalesmarketing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-app"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Mobile Application</a></h5>
+                                <span>@ViewBag.Nmobileapplication</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-helmet"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Construction</a></h5>
+                                <span>@ViewBag.Nconstruction</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-high-tech"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Information Technology</a></h5>
+                                <span>@ViewBag.Ninformationtechnology</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-real-estate"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Real Estate</a></h5>
+                                <span>@ViewBag.Nrealestate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-services text-center mb-30">
+                            <div class="services-ion">
+                                <span class="flaticon-content"></span>
+                            </div>
+                            <div class="services-cap">
+                                <h5><a href="#">Content Writer</a></h5>
+                                <span>@ViewBag.Ncontentwriter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- More Btn -->
+                <!-- Section Button -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="browse-btn2 text-center mt-50">
+                            <a href="#" class="border-btn2">Browse All Sectors</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Our Services End -->
+        <!-- Online CV Area Start -->
+        <div class="online-cv cv-bg section-overly pt-90 pb-120" data-background="@Url.Content("~/Content/assets/img/gallery/cv_bg.jpg")">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <div class="cv-caption text-center">
+                            <p class="pera1">FEATURED TOURS Packages</p>
+                            <p class="pera2"> Make a Difference with Your Online Resume!</p>
+                            <a href="/Login/SignIn" class="border-btn2 border-btn4">Upload your cv</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Online CV Area End-->
+        <!-- Featured_job_start -->
+        <section class="featured-job-area feature-padding">
+            <div class="container">
+                <!-- Section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>Recent Job</span>
+                            <h2>Featured Jobs</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-xl-10">
+                        <!-- single-job-content -->
+                        <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="/Home/JobDetails"><img src="~/Content/assets/img/icon/job-list1.png" alt=""></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a href="/Home/JobDetails"><h4>The ACME Laboratories Ltd.</h4></a>
+                                    <ul>
+                                        <li>Senior Executive - <br />Factory Administration (Canteen)</li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Dhaka, Bangladesh</li>
+                                        <li>$3500 - $4000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="items-link f-right">
+                                <a href="/Home/JobDetailsl">Full Time</a>
+                                <span>7 hours ago</span>
+                            </div>
+                        </div>
+                        <!-- single-job-content -->
+                        <div class="single-job-items mb-30">
+                            <div class="job-items">
+                                <div class="company-img">
+                                    <a href="/Home/JobDetails"><img src="~/Content/assets/img/icon/job-list2.png" alt=""></a>
+                                </div>
+                                <div class="job-tittle">
+                                    <a href="/Home/JobDetails"><h4>Graphic Designers</h4></a>
+                                    <ul>
+                                        <li>Big Thoughts </li>
+                                        <li><i class="fas fa-map-marker-alt"></i>Dhaka , Bangladesh</li>
+                                        <li>$3500 - $4000</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="items-link f-right">
+                                <a href="/Home/JobDetails">Full Time</a>
+                                <span>7 hours ago</span>
+                            </div>
+                        </div>
+                        <!-- single-job-content -->
+                        @foreach (var jobs in Model.filter1)
+                        {
+                            if (jobs != null)
+                            {
+
+                                <div class="single-job-items mb-30">
+                                    <div class="job-items">
+                                        <div class="company-img">
+                                            <a href="job_details.html"><img src="@Url.Content(jobs.CompanyProfile.CmpLogo)" height="85px" width="85px" alt=""></a>
+                                        </div>
+                                        <div class="job-tittle">
+                                            <a href="/Home/JobDetails?jobid=@jobs.JobId"><h4>@jobs.JobTitle</h4></a>
+                                            <ul>
+                                                <li>@jobs.CompanyProfile.CmpName</li>
+                                                <li><i class="fas fa-map-marker-alt"></i>@jobs.CompanyProfile.CmpHeadQ , Bangladesh</li>
+                                                <li>@jobs.JobSalary</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="items-link f-right">
+                                        <a href="/Home/JobDetails?jobid=@jobs.JobId">@jobs.JobNature</a>
+                                        <span>7 hours ago</span>
+                                    </div>
+                                </div>
+
+                            }
+
+
+
+                        }
+
+                        <!-- single-job-content -->
+                        @*<div class="single-job-items mb-30">
+            <div class="job-items">
+                <div class="company-img">
+                    <a href="job_details.html"><img src="~/Content/assets/img/icon/job-list4.png" alt=""></a>
+                </div>
+                <div class="job-tittle">
+                    <a href="job_details.html"><h4>Digital Marketer</h4></a>
+                    <ul>
+                        <li>Creative Agency</li>
+                        <li><i class="fas fa-map-marker-alt"></i>Rajshahi , Bangladesh</li>
+                        <li>$3500 - $4000</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="items-link f-right">
+                <a href="job_details.html">Full Time</a>
+                <span>7 hours ago</span>
+            </div>
+        </div>*@
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Featured_job_end -->
+        <!-- How  Apply Process Start-->
+        <!-- Here i removed How it works section-->
+        <!-- How  Apply Process End-->
+        <!-- Testimonial Start -->
+        <div class="testimonial-area">
+            <div class="container">
+                <!-- Testimonial contents -->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-xl-8 col-lg-8 col-md-10">
+                        <div class="h1-testimonial-active dot-style">
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial text-center">
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-caption ">
+                                    <!-- founder -->
+                                    <div class="testimonial-founder  ">
+                                        <div class="founder-img mb-30">
+                                            <img src="~/Content/assets/img/testmonial/reviewer-1.png" alt="">
+                                            <span>Mohammad Tanvir</span>
+                                            <p>Creative Director</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-top-cap">
+                                        <p>“This is the best online site to find job.”</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial text-center">
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-caption ">
+                                    <!-- founder -->
+                                    <div class="testimonial-founder  ">
+                                        <div class="founder-img mb-30">
+                                            <img src="~/Content/assets/img/testmonial/reviewer-2.png" alt="">
+                                            <span>Mizanur Rahman</span>
+                                            <p>Computer Operator</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-top-cap">
+                                        <p>“I find my First job Here . For those who want job immediately , This is the best site.”</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Single Testimonial -->
+                            <div class="single-testimonial text-center">
+                                <!-- Testimonial Content -->
+                                <div class="testimonial-caption ">
+                                    <!-- founder -->
+                                    <div class="testimonial-founder  ">
+                                        <div class="founder-img mb-30">
+                                            <img src="~/Content/assets/img/testmonial/reviewer-3.png" alt="">
+                                            <span>Sumaiya Akter</span>
+                                            <p> Data Entry Specialist</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-top-cap">
+                                        <p>“All kinds of jobs can be found here . Just Register yourself and Find your dream job.”</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+        <!-- Support Company Start-->
+        <!--Here i removed the What we are doing part-->
+        <!-- Support Company End-->
+        <!-- Blog Area Start -->
+        <div class="home-blog-area blog-h-padding">
+            <div class="container">
+                <!-- Section Tittle -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>Our latest blog</span>
+                            <h2>Our recent news</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6">
+                        <div class="home-blog-single mb-30">
+                            <div class="blog-img-cap">
+                                <div class="blog-img">
+                                    <img src="~/Content/assets/img/blog/home-blog1.jpg" alt="">
+                                    <!-- Blog date -->
+                                    <div class="blog-date text-center">
+                                        <span>24</span>
+                                        <p>Now</p>
+                                    </div>
+                                </div>
+                                <div class="blog-cap">
+                                    <p>|   Properties</p>
+                                    <h3><a href="single-blog.html">Weekly Jobs Newspaper 29 July 2022 or Saptahik Chakrir Khobor 22 July 2022 has been </a></h3>
+                                    <a href="#" class="more-btn">Read more »</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @foreach (var blog in Model.filter3)
+                    {
+
+                        <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div class="home-blog-single mb-30">
+                                <div class="blog-img-cap">
+                                    <div class="blog-img">
+                                        <img src="@Url.Content(blog.BlogImgPath)" height="324px" width="570px" alt="">
+                                        <!-- Blog date -->
+                                        <div class="blog-date text-center">
+                                            <span>24</span>
+                                            <p>Now</p>
+                                        </div>
+                                    </div>
+                                    <div class="blog-cap">
+                                        <p>|  @blog.BlogCatag</p>
+                                        <h3><a href="single-blog.html">@blog.BlogTitle</a></h3>
+                                        <a href="#" class="more-btn">Read more »</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+        <!-- Blog Area End -->
+
+</main>

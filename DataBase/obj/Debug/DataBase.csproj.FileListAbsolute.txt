@@ -1,0 +1,12 @@
+G:\Project Template\CareCare\DataBase\bin\Debug\DataBase.dll.config
+G:\Project Template\CareCare\DataBase\bin\Debug\DataBase.dll
+G:\Project Template\CareCare\DataBase\bin\Debug\DataBase.pdb
+G:\Project Template\CareCare\DataBase\bin\Debug\EntityFramework.dll
+G:\Project Template\CareCare\DataBase\bin\Debug\EntityFramework.SqlServer.dll
+G:\Project Template\CareCare\DataBase\bin\Debug\EntityFramework.xml
+G:\Project Template\CareCare\DataBase\bin\Debug\EntityFramework.SqlServer.xml
+G:\Project Template\CareCare\DataBase\obj\Debug\DataBase.csproj.AssemblyReference.cache
+G:\Project Template\CareCare\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
+G:\Project Template\CareCare\DataBase\obj\Debug\DataBase.csproj.CopyComplete
+G:\Project Template\CareCare\DataBase\obj\Debug\DataBase.dll
+G:\Project Template\CareCare\DataBase\obj\Debug\DataBase.pdb
